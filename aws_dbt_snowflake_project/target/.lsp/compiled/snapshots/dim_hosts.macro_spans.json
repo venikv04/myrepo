@@ -16,12 +16,12 @@
       "start": {
         "line": 20,
         "col": 15,
-        "index": 300
+        "index": 295
       },
       "stop": {
         "line": 20,
         "col": 32,
-        "index": 317
+        "index": 312
       }
     }
   }

@@ -11,6 +11,6 @@ WITH listings AS
         PRICE_PER_NIGHT_TAG,
         LISTING_CREATED_AT
     FROM
-       AIRBNB.dbt_schema.obt
+       AIRBNB.gold.obt
   )   
   SELECT * FROM listings

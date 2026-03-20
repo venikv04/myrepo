@@ -1,4 +1,8 @@
-
+{{
+  config(
+    materialized = 'ephemeral',
+    )
+}}
 
 WITH hosts AS 
 (
@@ -10,6 +14,6 @@ WITH hosts AS
         RESPONSE_RATE_QUALITY,
         HOST_CREATED_AT
     FROM 
-        AIRBNB.gold.obt
+        {{ ref('obt') }}
 )
 SELECT * FROM hosts

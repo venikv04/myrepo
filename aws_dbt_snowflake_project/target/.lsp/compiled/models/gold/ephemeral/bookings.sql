@@ -8,6 +8,6 @@ WITH bookings AS
         BOOKING_STATUS,
         CREATED_AT
     FROM
-       AIRBNB.dbt_schema.obt
+       AIRBNB.gold.obt
   )   
   SELECT * FROM bookings

@@ -1,8 +1,8 @@
 with __dbt__cte__hosts as (
 
 
-WITH hosts AS
- (
+WITH hosts AS 
+(
     SELECT 
         HOST_ID,
         HOST_NAME,
@@ -10,10 +10,10 @@ WITH hosts AS
         IS_SUPERHOST,
         RESPONSE_RATE_QUALITY,
         HOST_CREATED_AT
-    FROM
-       AIRBNB.gold.obt
-  )   
-  SELECT * FROM hosts
+    FROM 
+        AIRBNB.gold.obt
+)
+SELECT * FROM hosts
 )
 --EPHEMERAL-SELECT-WRAPPER-START
 select * from (
