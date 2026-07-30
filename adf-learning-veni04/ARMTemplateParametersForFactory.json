@@ -1,0 +1,51 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adf-learning-veni04"
+		},
+		"ADLS_SQL_PARQUET_accountKey": {
+			"value": ""
+		},
+		"LS_ONPREM_SQL_DB_password": {
+			"value": ""
+		},
+		"LS_PARQUET_SQL_SERVER_DW_password": {
+			"value": ""
+		},
+		"LS_SQLSERVER_TABLE_LKUP_password": {
+			"value": ""
+		},
+		"ADLS_SQL_PARQUET_properties_typeProperties_url": {
+			"value": "https://adlssinkforlearning04.dfs.core.windows.net/"
+		},
+		"LS_ONPREM_SQL_DB_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"LS_ONPREM_SQL_DB_properties_typeProperties_database": {
+			"value": "SQLMIGRATION"
+		},
+		"LS_ONPREM_SQL_DB_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_PARQUET_SQL_SERVER_DW_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"LS_PARQUET_SQL_SERVER_DW_properties_typeProperties_database": {
+			"value": "SQLMIGRATION"
+		},
+		"LS_PARQUET_SQL_SERVER_DW_properties_typeProperties_userName": {
+			"value": "sa"
+		},
+		"LS_SQLSERVER_TABLE_LKUP_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_TABLE_LKUP_properties_typeProperties_database": {
+			"value": "SQLMIGRATION"
+		},
+		"LS_SQLSERVER_TABLE_LKUP_properties_typeProperties_userName": {
+			"value": "sa"
+		}
+	}
+}

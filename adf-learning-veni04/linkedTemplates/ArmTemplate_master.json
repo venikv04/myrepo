@@ -1,0 +1,140 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adf-learning-veni04"
+		},
+		"ADLS_SQL_PARQUET_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLS_SQL_PARQUET'"
+		},
+		"LS_ONPREM_SQL_DB_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_ONPREM_SQL_DB'"
+		},
+		"LS_PARQUET_SQL_SERVER_DW_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_PARQUET_SQL_SERVER_DW'"
+		},
+		"LS_SQLSERVER_TABLE_LKUP_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQLSERVER_TABLE_LKUP'"
+		},
+		"ADLS_SQL_PARQUET_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlssinkforlearning04.dfs.core.windows.net/"
+		},
+		"LS_ONPREM_SQL_DB_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"LS_ONPREM_SQL_DB_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "SQLMIGRATION"
+		},
+		"LS_ONPREM_SQL_DB_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_PARQUET_SQL_SERVER_DW_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"LS_PARQUET_SQL_SERVER_DW_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "SQLMIGRATION"
+		},
+		"LS_PARQUET_SQL_SERVER_DW_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"LS_SQLSERVER_TABLE_LKUP_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_TABLE_LKUP_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "SQLMIGRATION"
+		},
+		"LS_SQLSERVER_TABLE_LKUP_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "sa"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adf-learning-veni04_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ADLS_SQL_PARQUET_accountKey": {
+						"value": "[parameters('ADLS_SQL_PARQUET_accountKey')]"
+					},
+					"LS_ONPREM_SQL_DB_password": {
+						"value": "[parameters('LS_ONPREM_SQL_DB_password')]"
+					},
+					"LS_PARQUET_SQL_SERVER_DW_password": {
+						"value": "[parameters('LS_PARQUET_SQL_SERVER_DW_password')]"
+					},
+					"LS_SQLSERVER_TABLE_LKUP_password": {
+						"value": "[parameters('LS_SQLSERVER_TABLE_LKUP_password')]"
+					},
+					"ADLS_SQL_PARQUET_properties_typeProperties_url": {
+						"value": "[parameters('ADLS_SQL_PARQUET_properties_typeProperties_url')]"
+					},
+					"LS_ONPREM_SQL_DB_properties_typeProperties_server": {
+						"value": "[parameters('LS_ONPREM_SQL_DB_properties_typeProperties_server')]"
+					},
+					"LS_ONPREM_SQL_DB_properties_typeProperties_database": {
+						"value": "[parameters('LS_ONPREM_SQL_DB_properties_typeProperties_database')]"
+					},
+					"LS_ONPREM_SQL_DB_properties_typeProperties_userName": {
+						"value": "[parameters('LS_ONPREM_SQL_DB_properties_typeProperties_userName')]"
+					},
+					"LS_PARQUET_SQL_SERVER_DW_properties_typeProperties_server": {
+						"value": "[parameters('LS_PARQUET_SQL_SERVER_DW_properties_typeProperties_server')]"
+					},
+					"LS_PARQUET_SQL_SERVER_DW_properties_typeProperties_database": {
+						"value": "[parameters('LS_PARQUET_SQL_SERVER_DW_properties_typeProperties_database')]"
+					},
+					"LS_PARQUET_SQL_SERVER_DW_properties_typeProperties_userName": {
+						"value": "[parameters('LS_PARQUET_SQL_SERVER_DW_properties_typeProperties_userName')]"
+					},
+					"LS_SQLSERVER_TABLE_LKUP_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQLSERVER_TABLE_LKUP_properties_typeProperties_server')]"
+					},
+					"LS_SQLSERVER_TABLE_LKUP_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQLSERVER_TABLE_LKUP_properties_typeProperties_database')]"
+					},
+					"LS_SQLSERVER_TABLE_LKUP_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQLSERVER_TABLE_LKUP_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}
