@@ -1,0 +1,25 @@
+{
+	"name": "DS_SQL_SERVER_UPT",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_PARQUET_SQL_SERVER_DW",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"schemaname": {
+				"type": "string"
+			},
+			"tablename": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ADF_Watermark_Table"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

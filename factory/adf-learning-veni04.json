@@ -1,0 +1,15 @@
+{
+	"name": "adf-learning-veni04",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "86362bdd-5687-4e94-87be-3224c544d629",
+		"tenantId": "81db98f3-8c52-4201-9d01-50d5ace93686"
+	}
+}

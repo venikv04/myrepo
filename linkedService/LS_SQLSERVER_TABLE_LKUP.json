@@ -1,0 +1,22 @@
+{
+	"name": "LS_SQLSERVER_TABLE_LKUP",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"description": "fetching watermark table data",
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "localhost\\SQLEXPRESS",
+			"database": "SQLMIGRATION",
+			"encrypt": "optional",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "sa",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJiNjUwODBjMy03YTI2LTRjYmYtOGZkNS03YjQ4MzNhNmNkZTciLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime3",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

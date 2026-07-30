@@ -1,0 +1,67 @@
+{
+	"name": "childpipeline_storedprocedure",
+	"properties": {
+		"activities": [
+			{
+				"name": "SP_UPT_WATERMRK",
+				"type": "SqlServerStoredProcedure",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"storedProcedureName": {
+						"value": "[dbo].[UpdateWatermark]",
+						"type": "Expression"
+					},
+					"storedProcedureParameters": {
+						"TableSchema": {
+							"value": {
+								"value": "@pipeline().parameters.TableSchema",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"TableName": {
+							"value": {
+								"value": "@pipeline().parameters.TableName",
+								"type": "Expression"
+							},
+							"type": "String"
+						},
+						"WaterMarkColumn": {
+							"value": {
+								"value": "@pipeline().parameters.WatermarkColumn",
+								"type": "Expression"
+							},
+							"type": "String"
+						}
+					}
+				},
+				"linkedServiceName": {
+					"referenceName": "LS_ONPREM_SQL_DB",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"parameters": {
+			"TableSchema": {
+				"type": "string"
+			},
+			"TableName": {
+				"type": "string"
+			},
+			"WatermarkColumn": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"lastPublishTime": "2026-07-14T19:53:20Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}
